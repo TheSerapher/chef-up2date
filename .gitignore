@@ -3,6 +3,7 @@
 /bin/
 /bundle/
 /vendor/gems/
+Gemfile.lock
 
 # Berkshelf
 /cookbooks/
@@ -10,3 +11,7 @@ Berksfile.lock
 
 # Vagrant
 .vagrant
+
+# Kitchen
+.kitchen/
+.kitchen.local.yml
