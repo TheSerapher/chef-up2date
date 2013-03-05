@@ -18,8 +18,8 @@
 
 case node['platform_family']
 when 'rhel'
-  # Upstream yum cookbook doesn't do anything yet
-  include_recipe 'yum::default'
+  # Include EPEL repository
+  include_recipe 'yum::epel'
 when 'debian'
   include_recipe 'apt::default'
 end
