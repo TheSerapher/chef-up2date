@@ -5,6 +5,7 @@ gem 'berkshelf'
 gem 'thor-foodcritic'
 gem 'rake'
 gem 'chefspec'
+gem 'chef', '< 11.0.0'
 gem 'vagrant', '~> 1.0.6'
 
 group :integration do
