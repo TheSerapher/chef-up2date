@@ -19,9 +19,7 @@ describe "up2date::default" do
   include Helpers::Up2dateTest
 
   it 'creates the preseeding directory in debian' do
-    if node['platform_family'] == 'rhel'
-      skip "Not required on RHEL platforms"
-    end
+    skip if ['rhel'].include?(node['platform_family'])
     directory('/var/cache/local/preseeding').must_exist
   end
 end
