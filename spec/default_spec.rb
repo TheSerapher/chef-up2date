@@ -2,7 +2,7 @@ require 'chefspec'
 
 # Test recipe inclusion
 recipes = {
-  "rhel" => [ "yum::default" ],
+  "rhel" => [ "yum::epel" ],
   "debian" => [ "apt::default" ]
 }
 
