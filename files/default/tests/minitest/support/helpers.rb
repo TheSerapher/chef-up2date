@@ -1,8 +1,4 @@
-#
-# Cookbook Name:: up2date
-# Recipe:: default
-#
-# Copyright (C) 2013 Sebastian Grewe <sebastian.grewe@gmail.com>
+# Copyright 2012, Sebastian Grewe <sebastian@grewe.ca>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,11 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-case node['platform_family']
-when 'rhel'
-  # Include EPEL repository
-  include_recipe 'yum::epel'
-when 'debian'
-  include_recipe 'apt::default'
+require 'chef/mixin/shell_out'
+
+module Helpers
+  module Up2dateTest
+    include Chef::Mixin::ShellOut
+    include MiniTest::Chef::Assertions
+    include MiniTest::Chef::Context
+    include MiniTest::Chef::Resources
+  end
 end
