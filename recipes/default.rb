@@ -18,8 +18,7 @@
 
 case node['platform_family']
 when 'rhel'
-  # Include EPEL repository
-  include_recipe 'yum::epel'
+  include_recipe 'yum'
 when 'debian'
   include_recipe 'apt::default'
 end
