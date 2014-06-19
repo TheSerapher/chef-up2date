@@ -1,37 +1,20 @@
 ---
 driver_plugin: vagrant
+
+provisioner:
+  name: chef_zero
+
 platforms:
-- name: squeeze-6.0.6
-  driver_config:
-    box: squeeze-6.0.6 
-  run_list: []
-- name: wheezy-7.0.0
-  driver_config:
-    box: wheezy-7.0.0
-  run_list: []
-- name: ubuntu-12.04
-  driver_config:
-    box: ubuntu-12.04
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-12.04.box
-  run_list: []
-- name: ubuntu-10.04
-  driver_config:
-    box: ubuntu-10.04
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-ubuntu-10.04.box
-  run_list: []
-- name: centos-6.3
-  driver_config:
-    box: centos-6.3
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-6.3.box
-  run_list: []
-- name: centos-5.8
-  driver_config:
-    box: centos-5.8
-    box_url: https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-5.8.box
-  run_list: []
+  - name: debian-6.0.8
+  - name: debian-7.4
+  - name: ubuntu-14.04
+  - name: ubuntu-12.04
+  - name: ubuntu-10.04
+  - name: centos-6.5
+  - name: centos-5.10
+
 suites:
-- name: default
-  run_list:
-  - recipe[minitest-handler]
-  - recipe[up2date]
-  attributes: {}
+  - name: default
+    run_list:
+      - recipe[up2date]
+    attributes: {}

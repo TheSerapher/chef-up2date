@@ -2,7 +2,9 @@
 
 require 'spec_helper'
 
-describe file('/var/cache/local/preseeding') do
-  skip if ['rhel'].include?(node['platform_family'])
-  it { should be_directory }
+os = backend(Serverspec::Commands::Base).check_os
+if os[:family] != 'RedHat'
+  describe file('/var/cache/local/preseeding') do
+    it { should be_directory }
+  end
 end
