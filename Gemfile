@@ -1,14 +1,11 @@
-source 'https://rubygems.org/'
+source 'https://rubygems.org'
 
-gem 'foodcritic'
-gem 'berkshelf'
-gem 'thor-foodcritic'
-gem 'rake'
+gem 'berkshelf', '~> 3.1.0'
 gem 'chefspec'
-gem 'chef', '< 11.0.0'
-gem 'vagrant', '~> 1.0.6'
+gem 'foodcritic'
+gem 'rubocop'
 
 group :integration do
-  gem 'test-kitchen', :git => "git://github.com/opscode/test-kitchen.git", :branch => '1.0'
-  gem 'kitchen-vagrant', :git => "git://github.com/opscode/kitchen-vagrant.git"
+  gem 'test-kitchen', '~> 1.2.0'
+  gem 'kitchen-vagrant'
 end

@@ -1,12 +1,16 @@
-Description [ ![Codeship Status for TheSerapher/chef-up2date](https://www.codeship.io/projects/3d9519f0-67e4-0130-2e0c-12313d093ed4/status?branch=master)](https://www.codeship.io/projects/1778)
+Description
 ===========
+
+This cookbook does a simple package index update. This is mostly
+required for Debian derivates since Yum does this with each installation
+procedure.
 
 Requirements
 ============
 
 ## Platform:
 
-* Ubuntu 
+* Ubuntu
 * Debian
 * CentOS
 * RHEL
@@ -26,7 +30,7 @@ Recipes
 
 ## up2date::default
 
-Updates the repository cache up2dated on distribution.
+Updates the repository cache on distributions.
 
 Testing
 =======
